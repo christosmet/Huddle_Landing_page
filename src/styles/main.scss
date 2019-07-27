@@ -22,12 +22,95 @@ body, html {
     height: 100%;
 }
 
-body {
-    font-size: 18px;
-    font-family: $body-font;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: $headings-font;
     font-weight: $bold;
+}
+
+body {
+    font-size: 18px;
+    font-family: $body-font;
+
+    header {
+        background: url("../images/bg-hero-mobile.svg");
+        background-size: cover;
+        background-position: center;
+
+        // height: 100vh;
+        position: relative;
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .main-nav {
+            padding: 35px 0;
+        }
+
+        .main-nav::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .logo {
+            float: left;
+
+            img {
+                width: 55%;
+            }
+        }
+
+        .buttons {
+            float: right;
+            margin-top: -5px;
+
+            .btn-white {
+                background-color: #fff;
+                color: #000;
+                font-weight: $bold;
+                font-size: .75em;
+                border-radius: 20px;
+                padding: 7.5px 25px;
+                box-shadow: 0 1px 5px #dbdbdb;
+            }
+        }
+
+        .hero {
+            text-align: center;
+            height: 80%;
+            margin-top: 17%;
+
+            h2 {
+                font-size: 1.73em;
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            p {
+                width: 95%;
+                margin: 0 auto;
+                font-size: 1.2em;
+                margin-top: 8%;
+                line-height: 1.4em;
+            }
+
+            .btn-pink {
+                display: block;
+                background-color: map-get($colors, primary);
+                color: #fff;
+                margin: 40px auto 0 auto;
+                width: 65%;
+                padding: 13px 15px;
+                border-radius: 20px;
+                font-weight: $bold;
+            }
+
+            .mockup-img {
+                width: 22em;
+                margin-top: 70px;
+            }
+        }
+    }
 }
