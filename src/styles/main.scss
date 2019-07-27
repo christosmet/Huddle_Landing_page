@@ -1,5 +1,33 @@
-$bg: #999;
+@import url("https://fonts.googleapis.com/css?family=Poppins:600&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
+$colors: (primary: #ff51bf, very-pale-cyan: #eafaff, very-dark-cyan: #00242d, grayish-blue: #7f8d98);
+
+$body-font: "Open Sans", sans-serif;
+$headings-font: "Poppins", sans-serif;
+
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body, html {
+    height: 100%;
+}
 
 body {
-    background: $bg;
+    font-size: 18px;
+    font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings-font;
+    font-weight: $bold;
 }
