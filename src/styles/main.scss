@@ -129,10 +129,17 @@ body {
     padding: 13px 15px;
     border-radius: 20px;
     font-weight: $bold;
+    &-footer {
+      @extend .btn-pink;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 15px;
+    }
   }
   .cards-outer {
     background-color: #fff;
     .card {
+      background-color: #fff;
       width: 90%;
       margin: 45px auto 20px auto;
       display: flex;
@@ -143,7 +150,7 @@ body {
       border-radius: 20px;
       box-shadow: 0 0 10px #dbdbdb;
       align-content: space-around;
-      height: 550px;
+      //   height: 550px;
       .card-img {
         width: 100%;
         img {
@@ -154,8 +161,10 @@ body {
         margin-top: 65px;
       }
       .card-text {
+        margin-bottom: -10px;
         h2 {
-          font-size: 1.43em;
+          margin-top: 50px;
+          font-size: 1.55em;
           word-spacing: 2px;
         }
         p {
@@ -166,14 +175,91 @@ body {
         }
       }
     }
-    &:last-of-type {
-      //   display: block;
-      .card-text {
-        h2 {
-          margin: auto;
-          font-size: 1.2em;
-          word-spacing: 2px;
-          justify-self: center;
+    &-footer {
+      @extend .card;
+      margin-bottom: -70px !important;
+      position: relative;
+      z-index: 200;
+      box-shadow: 0 -3px 5px #dbdbdb !important;
+      h2 {
+        margin: 5px auto;
+        font-size: 25px;
+      }
+    }
+  }
+  .main-footer {
+    position: relative;
+    z-index: 1;
+    background-color: map-get($colors, very-dark-cyan);
+    color: #fff;
+    padding-top: 160px;
+    .container {
+      width: 90%;
+      margin: 0 auto;
+
+      .footer-inner {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-content: space-around;
+      }
+      .logo {
+        margin: 10px;
+        .svg-logo path {
+          display: inline-block;
+          width: 40px;
+          height: 68px;
+          fill: #fff;
+        }
+      }
+      .contact {
+        margin: 10px 0;
+        .address,
+        .phonenumber,
+        .mail {
+          display: flex;
+          margin: 30px 0;
+          //   justify-content: space-between;
+          img {
+            align-self: flex-start;
+            margin-top: 5px;
+            margin-right: 30px;
+            width: 4%;
+          }
+          p {
+            width: 95%;
+            font-size: 1.1em;
+          }
+        }
+      }
+      .footer-nav {
+        margin: 20px 0;
+        li {
+          margin: 15px 0;
+        }
+        a {
+          color: #fff;
+        }
+      }
+      .social-media-btn {
+        margin: 20px 0;
+        text-align: center;
+        a {
+          margin: 0 10px;
+          color: #fff;
+        }
+      }
+      .copyrights {
+        margin: 20px 0 50px 0;
+        text-align: center;
+        font-size: 14px;
+        .attribution {
+          margin-top: 10px;
+          font-size: 11px;
+          text-align: center;
+        }
+        .attribution a {
+          color: map-get($colors, primary);
         }
       }
     }
