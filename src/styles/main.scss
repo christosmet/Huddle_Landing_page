@@ -2,7 +2,12 @@
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 
-$colors: (primary: #ff51bf, very-pale-cyan: #eafaff, very-dark-cyan: #00242d, grayish-blue: #7f8d98);
+$colors: (
+  primary: #ff51bf,
+  very-pale-cyan: #eafaff,
+  very-dark-cyan: #00242d,
+  grayish-blue: #7f8d98
+);
 
 $body-font: "Open Sans", sans-serif;
 $headings-font: "Poppins", sans-serif;
@@ -12,105 +17,165 @@ $semibold: 600;
 $bold: 700;
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
-body, html {
-    height: 100%;
+body,
+html {
+  height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $headings-font;
-    font-weight: $bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headings-font;
+  font-weight: $bold;
 }
 
 body {
-    font-size: 18px;
-    font-family: $body-font;
+  font-size: 18px;
+  font-family: $body-font;
 
-    header {
-        background: url("../images/bg-hero-mobile.svg");
-        background-size: cover;
-        background-position: center;
+  header {
+    background: url("../images/bg-hero-mobile.svg");
+    background-size: cover;
+    background-position: center;
+    background-color: map-get($colors, very-pale-cyan);
+    // height: 100vh;
+    // position: relative;
+    height: 960px;
 
-        // height: 100vh;
-        position: relative;
-
-        .container {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .main-nav {
-            padding: 35px 0;
-        }
-
-        .main-nav::after {
-            content: '';
-            display: table;
-            clear: both;
-        }
-
-        .logo {
-            float: left;
-
-            img {
-                width: 55%;
-            }
-        }
-
-        .buttons {
-            float: right;
-            margin-top: -5px;
-
-            .btn-white {
-                background-color: #fff;
-                color: #000;
-                font-weight: $bold;
-                font-size: .75em;
-                border-radius: 20px;
-                padding: 7.5px 25px;
-                box-shadow: 0 1px 5px #dbdbdb;
-            }
-        }
-
-        .hero {
-            text-align: center;
-            height: 80%;
-            margin-top: 17%;
-
-            h2 {
-                font-size: 1.73em;
-                width: 80%;
-                margin: 0 auto;
-            }
-
-            p {
-                width: 95%;
-                margin: 0 auto;
-                font-size: 1.2em;
-                margin-top: 8%;
-                line-height: 1.4em;
-            }
-
-            .btn-pink {
-                display: block;
-                background-color: map-get($colors, primary);
-                color: #fff;
-                margin: 40px auto 0 auto;
-                width: 65%;
-                padding: 13px 15px;
-                border-radius: 20px;
-                font-weight: $bold;
-            }
-
-            .mockup-img {
-                width: 22em;
-                margin-top: 70px;
-            }
-        }
+    .container {
+      width: 90%;
+      margin: 0 auto;
     }
+
+    .main-nav {
+      padding: 35px 0;
+    }
+
+    .main-nav::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .logo {
+      float: left;
+
+      img {
+        width: 55%;
+      }
+    }
+
+    .buttons {
+      float: right;
+      margin-top: -5px;
+
+      .btn-white {
+        background-color: #fff;
+        color: #000;
+        font-weight: $bold;
+        font-size: 0.75em;
+        border-radius: 20px;
+        padding: 7.5px 25px;
+        box-shadow: 0 1px 5px #dbdbdb;
+      }
+    }
+
+    .hero {
+      text-align: center;
+      height: 80%;
+      margin-top: 17%;
+      display: flex;
+      flex-wrap: wrap;
+      .hero-text {
+        width: 100%;
+        h2 {
+          font-size: 1.73em;
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        p {
+          width: 95%;
+          margin: 0 auto;
+          font-size: 1.2em;
+          margin-top: 8%;
+          line-height: 1.4em;
+        }
+      }
+      .hero-img {
+        width: 100%;
+        .mockup-img {
+          width: 22em;
+          margin-top: 70px;
+        }
+      }
+    }
+  }
+  .btn-pink {
+    display: block;
+    background-color: map-get($colors, primary);
+    color: #fff;
+    margin: 10% auto 0 auto;
+    width: 65%;
+    padding: 13px 15px;
+    border-radius: 20px;
+    font-weight: $bold;
+  }
+  .cards-outer {
+    background-color: #fff;
+    .card {
+      width: 90%;
+      margin: 45px auto 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      //   border: 1px solid;
+      padding: 40px 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #dbdbdb;
+      align-content: space-around;
+      height: 550px;
+      .card-img {
+        width: 100%;
+        img {
+          width: 17em;
+        }
+      }
+      &:first-child {
+        margin-top: 65px;
+      }
+      .card-text {
+        h2 {
+          font-size: 1.43em;
+          word-spacing: 2px;
+        }
+        p {
+          color: map-get($colors, grayish-blue);
+          width: 80%;
+          margin: 30px auto 0 auto;
+          line-height: 1.5;
+        }
+      }
+    }
+    &:last-of-type {
+      //   display: block;
+      .card-text {
+        h2 {
+          margin: auto;
+          font-size: 1.2em;
+          word-spacing: 2px;
+          justify-self: center;
+        }
+      }
+    }
+  }
 }
